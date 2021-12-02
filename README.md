@@ -8,7 +8,7 @@ Sample implementation of LWW-Element-Graph in Swift
 1. Run the example.
 
 ### Results:
-Each test will appear in the console, documented with the examples the test provides.
+After run each test result will appear in the console, documented with the examples the test provides.
 
 
 ######
