@@ -38,24 +38,28 @@ baseGraph.addEdge(edge4_5)
 // Print result
 print("1. Add a vertex/edge")
 baseGraph.printGraphDescription(graphTitle: "BaseGraph")
+print("\n \n \n")
 
 // MARK: - 2. remove a vertex/edge
 func removeVertexTest() {
     
     print("2. Remove a vertex/edge")
+    print("--------------------------------------------------------------------")
     let graph1 = baseGraph.copy()
     
     graph1.removeVertex(vertex4)
     graph1.removeEdge(edge2_3)
     
-    graph1.printGraphDescription(graphTitle: "Removing Vertex 4 and Edge[2:3]")
-    
+    graph1.printGraphDescription(graphTitle: "Removed vertex 4 and edge[2:3]")
+    print("\n")
     // Second Example
-    let graph2 = baseGraph.copy()
+    let graph2 = graph1.copy()
     graph2.removeVertex(vertex3)
-    graph2.printGraphDescription(graphTitle: "Removing vertex 3")
+    graph2.printGraphDescription(graphTitle: "Removed vertex 3")
+    print("--------------------------------------------------------------------")
+    print("\n \n \n")
 }
-
+removeVertexTest()
 // MARK: - 3. check if a vertex is in the graph,
 
 func checkVertexIsInGraphTest() {
@@ -67,6 +71,7 @@ func checkVertexIsInGraphTest() {
     print("Fake Vertex is in baseGraph: " + "\(baseGraph.contains(vertex: fakeVertex)))")
     print("Fake Edge is in baseGraph: " + "\(baseGraph.contains(edge: fakeEdge))")
     print("--------------------------------------------------------------------")
+    print("\n \n \n")
 }
 
 checkVertexIsInGraphTest() // call the test
@@ -80,6 +85,7 @@ func allVerticlesConnectedToGraphTest() {
     let verticesConnectedToVertex3 = baseGraph.connectedVertices(to: vertex3).map { "\($0.value)" }.joined(separator: ",")
     print(verticesConnectedToVertex3)
     print("--------------------------------------------------------------------")
+    print("\n \n \n")
 }
 
 allVerticlesConnectedToGraphTest() // call the test
@@ -109,6 +115,7 @@ func pathBetweenTwoVerticesTest() {
     print("Path between vertex 1 and vertex 1, which shouldn't exist because of no edges, should be empty:")
     print(graph.describedPath(startVertex: vertex1, endVertex: vertex1))
     print("--------------------------------------------------------------------")
+    print("\n \n \n")
 }
 
 pathBetweenTwoVerticesTest() // call the test
@@ -136,8 +143,7 @@ func mergeConcurrentPathTest() {
     let mergedGraph = graphA.merge(with: graphB)
     print("Result of the merge:")
     mergedGraph.printGraphDescription(graphTitle: "Merged graphAB")
-    print("\n \n")
-    
+    print("\n")
     print("Sync graph A and graph B with the merged graph above.")
     graphA = mergedGraph.copy()
     graphB = mergedGraph.copy()
